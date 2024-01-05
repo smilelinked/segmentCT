@@ -4,6 +4,8 @@ import logging
 import tornado.web
 from tornado.ioloop import IOLoop
 from tornado.log import enable_pretty_logging
+
+from ctsegment.algm import CTSegment
 from handler import handler
 
 
@@ -30,7 +32,7 @@ async def main():
     app = make_app()
     app.listen(8086)
     shutdown_event = asyncio.Event()
-    IOLoop.current().spawn_callback(ModelBuilder3D.builder)
+    IOLoop.current().spawn_callback(CTSegment.segment)
     await shutdown_event.wait()
 
 
