@@ -5,7 +5,6 @@ import tornado.web
 from tornado.ioloop import IOLoop
 from tornado.log import enable_pretty_logging
 from handler import handler
-from metashape.algm import ModelBuilder3D
 
 
 class MainHandler(tornado.web.RequestHandler):

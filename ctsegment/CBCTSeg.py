@@ -3,10 +3,9 @@ import string
 import time
 import glob
 import shutil
-import argparse
 from monai.inferers import sliding_window_inference
 from monai.data import (DataLoader, Dataset)
-from utils import *
+from .utils import *
 
 def id_generator(size=6, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
