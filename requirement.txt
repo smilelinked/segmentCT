@@ -52,3 +52,5 @@ yacs==0.1.8
 yarl==1.7.2
 seaborn==0.11.2
 numpy==1.21.5
+psutil==5.8.0
+esdk-obs-python==3.23.12

@@ -94,7 +94,7 @@ class CTSegment:
                                          default=0.3)
                 input_group.add_argument('-mo', '--merging_order', nargs="+", type=str, help='order of the merging',
                                          default=["SKIN", "CV", "UAW", "CB", "MAX", "MAND", "CAN", "RC"])
-                input_group.add_argument('-ncw', '--nbr_CPU_worker', type=int, help='Number of worker', default=1)
+                input_group.add_argument('-ncw', '--nbr_CPU_worker', type=int, help='Number of worker', default=0)
                 input_group.add_argument('-ngw', '--nbr_GPU_worker', type=int, help='Number of worker', default=5)
 
                 args = parser.parse_args()
