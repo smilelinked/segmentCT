@@ -20,7 +20,7 @@ class StatusHandler(BaseHandler):
 
 class CTInQueueHandler(BaseHandler):
 
-    async def post(self):
+    def post(self):
         post_data = self.request.body
         if post_data:
             post_data = self.request.body.decode('utf-8')
@@ -30,6 +30,6 @@ class CTInQueueHandler(BaseHandler):
         information = post_data.get("information")
         if "normal" not in ct_task_queue_dict:
             ct_task_queue_dict["normal"] = asyncio.PriorityQueue()
-        await ct_task_queue_dict["normal"].put((NORMAL_PRIORITY, information))
+        ct_task_queue_dict["normal"].put_nowait((NORMAL_PRIORITY, information))
 
         self.response(200, "you are in the queue.")
